@@ -59,9 +59,9 @@ public class MainController {
     }
 
     public void generatePdf() throws IOException, DocumentException {
-        String vm_path  = "/home/perennial/Documents/";//Path of the template makesure to give absolutePath eg.  C:/Velocity_Template/
-        String vm_template = "mainFile.vm"; //file name with ".vm" extention.
-//        String vm_template = "new_template.vm"; //file name with ".vm" extention.
+        String vm_path  = "C:\\Users\\Aryan\\Documents\\";//Path of the template makesure to give absolutePath eg.  C:/Velocity_Template/
+//        String vm_template = "boardResolution.vm"; //file name with ".vm" extention.
+        String vm_template = "facilityRequest.vm"; //file name with ".vm" extention.
         //this can be created as bean as well but
         // make sure all the templates are from same path
         VelocityEngine velocityEngine =  new VelocityEngine();
@@ -72,6 +72,13 @@ public class MainController {
         List<Person> person = new ArrayList<>();
         person.add(new Person("JOhne","939","Director","gmail.com"));
         person.add(new Person("Adam","9339","Sharehholder","gmail.com"));
+        person.add(new Person("Ian","9339","Sharehholder","gmail.com"));
+        person.add(new Person("Stefan","9339","Sharehholder","aryanmeghnani@gmail.com"));
+        person.add(new Person("Stefan","9339","Sharehholder","gmail.com"));
+        person.add(new Person("Stefan","9339","Sharehholder","gmail.com"));
+        person.add(new Person("Stefan","9339","Sharehholder","gmail.com"));
+        person.add(new Person("Stefan","9339","Sharehholder","gmail.com"));
+        person.add(new Person("Stefan","9339","Sharehholder","gmail.com"));
         //Write data to template
         StringWriter stringWriter = new StringWriter();
         VelocityContext context = new VelocityContext();
@@ -87,7 +94,7 @@ public class MainController {
         document.outputSettings()
                 .syntax(Document.OutputSettings.Syntax.xml).prettyPrint(true);
 
-        String PDF = "/home/perennial/Documents/sample.pdf" ;// pdf location
+        String PDF = "C:\\Users\\Aryan\\Documents\\sample.pdf" ;// pdf location
         File outputPdf = new File(PDF);
         OutputStream outputStream = new FileOutputStream(outputPdf);
 //Rendring Html to PDF
